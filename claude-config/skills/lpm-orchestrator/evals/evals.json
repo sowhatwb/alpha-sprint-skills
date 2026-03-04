@@ -1,0 +1,23 @@
+{
+  "skill_name": "lpm_orchestrator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我做个用户登录功能。\n\ncontext_history: []\navailable_agents: [frontend-agent, backend-agent, qa-agent, devops-agent]",
+      "expected_output": "信心值低（约20%），输出 clarification_needed 列表，提出至少3个关键问题，status 为 AWAITING_CONFIRMATION，不生成任务图谱",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "我们要做 Q2 产品发布营销，目标是新用户增长30%，3月底必须上线，预算5万人民币，目标用户是25-35岁的职场人群，主要渠道是微信和抖音。\n\ncontext_history: [{\"decision\": \"品牌色已定为深蓝+金色\", \"date\": \"2026-02-01\"}]\navailable_agents: [copywriter-agent, designer-agent, social-media-agent, data-agent]",
+      "expected_output": "信心值高（≥80%），完成3W1H对齐，生成包含至少4个子任务的 OpenClaw_Task_Schema JSON，包含 critical_path，Self-Reflect 后无逻辑漏洞，status 为 EXECUTING",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "分析一下我们上个月的用户流失情况，给我一份报告。\n\ncontext_history: [{\"metric\": \"上月流失率\", \"value\": \"12%\", \"benchmark\": \"行业平均5%\"}]\navailable_agents: [anl-agent, research-agent, report-agent]",
+      "expected_output": "信心值中等（约60%），识别缺失信息（如：数据来源、报告受众、行动建议范围），输出部分追问 + 部分任务草图，或完整追问，不应直接跳过追问生成完整计划",
+      "files": []
+    }
+  ]
+}

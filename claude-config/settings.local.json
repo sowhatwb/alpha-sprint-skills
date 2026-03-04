@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sudo npm install -g @anthropic-ai/skill-creator)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:github.com)",
+      "Bash(cd /Users/benwu/investment-app/backend && source venv/bin/activate && pip install pydantic==2.8.0 aiosqlite==0.20.0 2>&1)",
+      "Bash(git add backend/requirements.txt backend/__init__.py .gitignore && git commit -m \"fix: add missing pydantic/aiosqlite deps, backend __init__, expand gitignore\")",
+      "Bash(cd /Users/benwu/investment-app/backend && source venv/bin/activate && python3 -c \"from db.database import init_db; init_db\\(\\)\")",
+      "Bash(cd /Users/benwu/investment-app/backend && source venv/bin/activate && python3 -c \"\nfrom db.database import get_conn\nconn = get_conn\\(\\)\ntables = conn.execute\\(\\\\\"SELECT name FROM sqlite_master WHERE type='table'\\\\\"\\).fetchall\\(\\)\nprint\\('Tables:', [t[0] for t in tables]\\)\nconn.close\\(\\)\n\")",
+      "Bash(export PATH=\"$PATH:/Users/benwu/.npm-global/bin\" && mcporter config add exa https://mcp.exa.ai/mcp 2>&1)",
+      "Bash(export PATH=\"$PATH:/Users/benwu/.npm-global/bin:/Users/benwu/.local/bin\" && mcporter config add douyin http://localhost:18070/mcp 2>&1 && agent-reach doctor 2>&1)",
+      "Bash(xfetch auth extract --browser chrome 2>&1)",
+      "Bash(agent-reach configure --from-browser chrome 2>&1)",
+      "Bash(pip install browser-cookie3 -q && agent-reach configure --from-browser chrome 2>&1)",
+      "Bash(pip3 install browser-cookie3 -q 2>&1 && agent-reach configure --from-browser chrome 2>&1)",
+      "Bash(agent-reach doctor 2>&1)",
+      "Bash(xreach tweet \"https://x.com/qkl2058/status/2028029807918006314\" --json 2>&1)",
+      "Bash(obsidian help 2>&1 | head -5)",
+      "Bash(npx obsidian --version)",
+      "Bash(cat /Users/benwu/Library/Application\\\\ Support/obsidian/obsidian.json | python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); [print\\(v.get\\('path',''\\)\\) for k,v in d.get\\('vaults',{}\\).items\\(\\)]\")",
+      "Skill(article-extractor)",
+      "Skill(youtube-transcript)",
+      "Bash(npx skills find \"knowledge base\" 2>&1)",
+      "Bash(npx skills find \"PKM note taking\" 2>&1)",
+      "Bash(python3 -c \"\nimport json, os\nconfig = os.path.expanduser\\('~/Library/Application Support/obsidian/obsidian.json'\\)\nwith open\\(config\\) as f:\n    d = json.load\\(f\\)\nfor k, v in d.get\\('vaults', {}\\).items\\(\\):\n    print\\(v.get\\('path', ''\\)\\)\n\")",
+      "Bash(cp -r ~/.claude/skills/knowledge-ingest ~/alpha-sprint-skills/ && echo \"✅ 复制成功\" && ls ~/alpha-sprint-skills/ | grep knowledge)"
+    ]
+  }
+}

@@ -1,0 +1,12 @@
+# 排除 notebooklm（含浏览器二进制，体积过大）
+skills/notebooklm/
+
+# 排除工作区临时文件
+skills/lpm_orchestrator-workspace/
+
+# 排除本地运行时数据
+skills/*/node_modules/
+skills/*/.venv/
+skills/notebooklm/.venv/
+*.pyc
+__pycache__/
